@@ -1,0 +1,102 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Lumen API",
+        "description": "Lumen API documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/send": {
+            "post": {
+                "summary": "Send message to subscribers",
+                "operationId": "889064ea3930d6cccac266996ef80302",
+                "responses": {
+                    "200": {
+                        "description": "Message sent successfully"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/subscribe": {
+            "post": {
+                "summary": "Subscribe user to chat bot",
+                "operationId": "d72a8c19f7c714448f1bc5528614acd9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful subscription"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/subscribe/channel": {
+            "post": {
+                "summary": "Subscribe user to channel or chat",
+                "operationId": "68dabc7362dd0c5bdbb8a55fbc374571",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "channel_id": {
+                                        "type": "string"
+                                    },
+                                    "username": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful subscription"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/webhook": {
+            "post": {
+                "summary": "Receive responses from messenger API",
+                "operationId": "6ad934fb0a0517606a675d5042079914",
+                "responses": {
+                    "200": {
+                        "description": "Webhook received successfully"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        }
+    }
+}
